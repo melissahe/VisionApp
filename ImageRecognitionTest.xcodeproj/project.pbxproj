@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81764C64208BE0D90062EA5D /* GoogleTranslationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81764C63208BE0D90062EA5D /* GoogleTranslationAPI.swift */; };
+		81764C66208BE1180062EA5D /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81764C65208BE1180062EA5D /* NetworkHelper.swift */; };
 		D29FFAF5208A4F6700D46F79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29FFAF4208A4F6700D46F79 /* AppDelegate.swift */; };
 		D29FFAF7208A4F6700D46F79 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29FFAF6208A4F6700D46F79 /* CameraViewController.swift */; };
 		D29FFAFC208A4F6700D46F79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29FFAFB208A4F6700D46F79 /* Assets.xcassets */; };
@@ -16,7 +18,6 @@
 		DBF28591208B666A00F9ED7B /* DismissViewTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF28590208B666A00F9ED7B /* DismissViewTemplate.swift */; };
 		DBF285A2208B8EB200F9ED7B /* BaseLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A1208B8EB200F9ED7B /* BaseLanguageViewController.swift */; };
 		DBF285A4208B8EBE00F9ED7B /* TargetLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A3208B8EBE00F9ED7B /* TargetLanguageViewController.swift */; };
-		DBF285A7208B8EE000F9ED7B /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A6208B8EE000F9ED7B /* TextToSpeech.swift */; };
 		DBF285A9208B8EF900F9ED7B /* BaseLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A8208B8EF900F9ED7B /* BaseLanguageView.swift */; };
 		DBF285AB208B8F0800F9ED7B /* TargetLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285AA208B8F0800F9ED7B /* TargetLanguageView.swift */; };
 		DBF285B3208BA49D00F9ED7B /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285B2208BA49D00F9ED7B /* LanguageTableViewCell.swift */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		81764C63208BE0D90062EA5D /* GoogleTranslationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleTranslationAPI.swift; sourceTree = "<group>"; };
+		81764C65208BE1180062EA5D /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		D29FFAF1208A4F6700D46F79 /* ImageRecognitionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageRecognitionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29FFAF4208A4F6700D46F79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D29FFAF6208A4F6700D46F79 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -36,7 +39,6 @@
 		DBF28590208B666A00F9ED7B /* DismissViewTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissViewTemplate.swift; sourceTree = "<group>"; };
 		DBF285A1208B8EB200F9ED7B /* BaseLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLanguageViewController.swift; sourceTree = "<group>"; };
 		DBF285A3208B8EBE00F9ED7B /* TargetLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetLanguageViewController.swift; sourceTree = "<group>"; };
-		DBF285A6208B8EE000F9ED7B /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
 		DBF285A8208B8EF900F9ED7B /* BaseLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLanguageView.swift; sourceTree = "<group>"; };
 		DBF285AA208B8F0800F9ED7B /* TargetLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetLanguageView.swift; sourceTree = "<group>"; };
 		DBF285B2208BA49D00F9ED7B /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
@@ -112,8 +114,9 @@
 		DBF285A5208B8EC400F9ED7B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DBF285A6208B8EE000F9ED7B /* TextToSpeech.swift */,
 				DBF285B4208BA4F200F9ED7B /* Languages.swift */,
+				81764C65208BE1180062EA5D /* NetworkHelper.swift */,
+				81764C63208BE0D90062EA5D /* GoogleTranslationAPI.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -212,12 +215,13 @@
 				D29FFAF7208A4F6700D46F79 /* CameraViewController.swift in Sources */,
 				DBF285A4208B8EBE00F9ED7B /* TargetLanguageViewController.swift in Sources */,
 				DBF285B5208BA4F200F9ED7B /* Languages.swift in Sources */,
+				81764C66208BE1180062EA5D /* NetworkHelper.swift in Sources */,
 				D29FFB0B208A561500D46F79 /* Resnet50.mlmodel in Sources */,
-				DBF285A7208B8EE000F9ED7B /* TextToSpeech.swift in Sources */,
 				DBF285B3208BA49D00F9ED7B /* LanguageTableViewCell.swift in Sources */,
 				DBF285A9208B8EF900F9ED7B /* BaseLanguageView.swift in Sources */,
 				DBF285A2208B8EB200F9ED7B /* BaseLanguageViewController.swift in Sources */,
 				D29FFAF5208A4F6700D46F79 /* AppDelegate.swift in Sources */,
+				81764C64208BE0D90062EA5D /* GoogleTranslationAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,10 +355,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J4UC96YYKT;
+				DEVELOPMENT_TEAM = 86N2U73XRJ;
 				INFOPLIST_FILE = ImageRecognitionTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "lisa-j.ImageRecognitionTest";
+				PRODUCT_BUNDLE_IDENTIFIER = lisa.ImageRecognitionTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -366,10 +371,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J4UC96YYKT;
+				DEVELOPMENT_TEAM = 86N2U73XRJ;
 				INFOPLIST_FILE = ImageRecognitionTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "lisa-j.ImageRecognitionTest";
+				PRODUCT_BUNDLE_IDENTIFIER = lisa.ImageRecognitionTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
