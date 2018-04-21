@@ -20,8 +20,14 @@ class BaseLanguageViewController: UIViewController, UITableViewDelegate, UITable
         baseLanguageView.tableView.delegate = self
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let savedBaseLanguage = UserDefaultsHelper.manager.getBaseLanguage() {
+            baseLanguageView.label.text = savedBaseLanguage
+        }
+    }
+    
     @objc func dismissView() {
-        
         // Dismiss Animation
         let transition = CATransition()
         transition.duration = 0.3
@@ -45,15 +51,15 @@ class BaseLanguageViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let testData = Languages.allLanguages[indexPath.row]
+        let selectedLanguage = Languages.allLanguages[indexPath.row]
         let cell = baseLanguageView.tableView.dequeueReusableCell(withIdentifier: "Language Cell", for: indexPath) as! LanguageTableViewCell
-        cell.placeLabel.text = testData
+        cell.placeLabel.text = selectedLanguage
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let testData = Languages.allLanguages[indexPath.row]
-        baseLanguageView.label.text = testData
+        let selectedLanguage = Languages.allLanguages[indexPath.row]
+        baseLanguageView.label.text = selectedLanguage
+        Languages.currentBaseLanguage = selectedLanguage
     }
-    
 }

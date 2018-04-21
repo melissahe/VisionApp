@@ -78,7 +78,6 @@ class CameraViewController: UIViewController , AVCaptureVideoDataOutputSampleBuf
     }
     
     @objc func baseLanguageButtonAction() {
-        print("Make a pickerview for a base language appear")
         let transition = CATransition()
         transition.duration = 0.3
         transition.type = kCATransitionMoveIn
@@ -91,7 +90,6 @@ class CameraViewController: UIViewController , AVCaptureVideoDataOutputSampleBuf
     }
     
     @objc func targetLanguageButtonAction() {
-        print("Make a pickerview for a target language appear")
         let transition = CATransition()
         transition.duration = 0.3
         transition.type = kCATransitionMoveIn

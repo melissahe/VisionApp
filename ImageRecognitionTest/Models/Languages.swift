@@ -10,5 +10,16 @@ import Foundation
 
 class Languages {
     static var allLanguages = ["test1", "test2", "test3"]
-    
+    static var currentBaseLanguage = ""  {
+        didSet {
+            UserDefaultsHelper.manager.setBaseLanguage(to: currentBaseLanguage)
+        }
+    }
+    static var currentTargetLanguage = "" {
+        didSet {
+            UserDefaultsHelper.manager.setTargetLangauge(to: currentTargetLanguage)
+        }
+    }
 }
+
+

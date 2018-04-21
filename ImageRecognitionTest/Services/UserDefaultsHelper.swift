@@ -1,5 +1,5 @@
 //
-//  UserDefaultsHelper.swift
+//  UserDefaults.swift
 //  ImageRecognitionTest
 //
 //  Created by Richard Crichlow on 4/21/18.
