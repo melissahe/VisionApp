@@ -1,5 +1,5 @@
 //
-//  LanguageTableViewCell.swift
+//  PlaceTableViewCell.swift
 //  ImageRecognitionTest
 //
 //  Created by Richard Crichlow on 4/21/18.
@@ -9,13 +9,14 @@
 import UIKit
 
 class LanguageTableViewCell: UITableViewCell {
-
-    lazy var placeLabel: UILabel = {
+    
+    lazy var languageLabel: UILabel = {
         let lb = UILabel()
         lb.text = "Test"
         let font = UIFont(name: "HelveticaNeue-Medium", size: 40)!
         lb.font = font
         lb.textAlignment = .center
+        lb.numberOfLines = 0
         return lb
     }()
     
@@ -35,13 +36,12 @@ class LanguageTableViewCell: UITableViewCell {
     }
     
     private func setupAndConstrainObjects(){
-        addSubview(placeLabel)
-        placeLabel.translatesAutoresizingMaskIntoConstraints = false
-        placeLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        placeLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        placeLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        placeLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        addSubview(languageLabel)
+        languageLabel.translatesAutoresizingMaskIntoConstraints = false
+        languageLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        languageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        languageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        languageLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
     
-
 }

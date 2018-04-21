@@ -15,15 +15,24 @@ class CameraViewController: UIViewController , AVCaptureVideoDataOutputSampleBuf
     let cameraView = CameraView()
     let baseLanguageVC = BaseLanguageViewController()
     let targetLanguageVC = TargetLanguageViewController()
-    
+    public var currentBaseLanguage = ""
+    public var currentTargetLanguage = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCaptureSession()
         view.addSubview(cameraView)
+        targetLanguageVC.targetLanguageDelegate = self
+        baseLanguageVC.baseLanguageDelegate = self
         cameraView.button.addTarget(self, action: #selector(translate), for: .touchUpInside)
         cameraView.baseLanguageButton.addTarget(self, action: #selector(baseLanguageButtonAction), for: .touchUpInside)
         cameraView.targetLanguageButton.addTarget(self, action: #selector(targetLanguageButtonAction), for: .touchUpInside)
+        if let savedBaseLanguage = UserDefaultsHelper.manager.getBaseLanguage() {
+            currentBaseLanguage = savedBaseLanguage
+        }
+        if let savedTargetLanguage = UserDefaultsHelper.manager.getTargetLanguage() {
+            currentTargetLanguage = savedTargetLanguage
+        }
     }
     
     func setupCaptureSession() {
@@ -75,6 +84,7 @@ class CameraViewController: UIViewController , AVCaptureVideoDataOutputSampleBuf
     
     @objc func translate() {
         print(cameraView.label.text ?? "??")
+        // TODO: API CALL GOES HERE
     }
     
     @objc func baseLanguageButtonAction() {
@@ -102,5 +112,19 @@ class CameraViewController: UIViewController , AVCaptureVideoDataOutputSampleBuf
     }
     
 }
+
+extension CameraViewController: TargetLanguageDelegate {
+    func passSelectedTargetLanguageToCameraVC(selectedLanguage: String) {
+        self.currentTargetLanguage = selectedLanguage
+    }
+}
+extension CameraViewController: BaseLanguageDelegate {
+    func passSelectedBaseLanguageToCameraVC(selectedLanguage: String) {
+        self.currentBaseLanguage = selectedLanguage
+    }
+}
+
+
+
 
 

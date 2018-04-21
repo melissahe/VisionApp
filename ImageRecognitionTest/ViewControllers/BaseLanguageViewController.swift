@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol BaseLanguageDelegate: class {
+    func passSelectedBaseLanguageToCameraVC(selectedLanguage: String)
+}
+
 class BaseLanguageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let baseLanguageView = BaseLanguageView()
+    var baseLanguageDelegate: BaseLanguageDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +58,7 @@ class BaseLanguageViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let selectedLanguage = Languages.allLanguages[indexPath.row]
         let cell = baseLanguageView.tableView.dequeueReusableCell(withIdentifier: "Language Cell", for: indexPath) as! LanguageTableViewCell
-        cell.placeLabel.text = selectedLanguage
+        cell.languageLabel.text = selectedLanguage
         return cell
     }
     
@@ -61,5 +66,6 @@ class BaseLanguageViewController: UIViewController, UITableViewDelegate, UITable
         let selectedLanguage = Languages.allLanguages[indexPath.row]
         baseLanguageView.label.text = selectedLanguage
         Languages.currentBaseLanguage = selectedLanguage
+        self.baseLanguageDelegate?.passSelectedBaseLanguageToCameraVC(selectedLanguage: selectedLanguage)
     }
 }

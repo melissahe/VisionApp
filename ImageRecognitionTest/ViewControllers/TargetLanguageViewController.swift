@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol TargetLanguageDelegate: class {
+    func passSelectedTargetLanguageToCameraVC(selectedLanguage: String)
+}
+
 class TargetLanguageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let targetLanguageView = TargetLanguageView()
+    var targetLanguageDelegate: TargetLanguageDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +34,6 @@ class TargetLanguageViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     @objc func dismissView() {
-        
         // Dismiss Animation
         let transition = CATransition()
         transition.duration = 0.3
@@ -55,7 +59,7 @@ class TargetLanguageViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let selectedLanguage = Languages.allLanguages[indexPath.row]
         let cell = targetLanguageView.tableView.dequeueReusableCell(withIdentifier: "Language Cell", for: indexPath) as! LanguageTableViewCell
-        cell.placeLabel.text = selectedLanguage
+        cell.languageLabel.text = selectedLanguage
         return cell
     }
     
@@ -63,5 +67,6 @@ class TargetLanguageViewController: UIViewController, UITableViewDelegate, UITab
         let selectedLanguage = Languages.allLanguages[indexPath.row]
         targetLanguageView.label.text = selectedLanguage
         Languages.currentTargetLanguage = selectedLanguage
+        self.targetLanguageDelegate?.passSelectedTargetLanguageToCameraVC(selectedLanguage: selectedLanguage)
     }
 }
