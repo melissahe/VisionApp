@@ -8,22 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		D29FFAF5208A4F6700D46F79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29FFAF4208A4F6700D46F79 /* AppDelegate.swift */; };
-		D29FFAF7208A4F6700D46F79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29FFAF6208A4F6700D46F79 /* ViewController.swift */; };
+		D29FFAF7208A4F6700D46F79 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29FFAF6208A4F6700D46F79 /* CameraViewController.swift */; };
 		D29FFAFC208A4F6700D46F79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29FFAFB208A4F6700D46F79 /* Assets.xcassets */; };
 		D29FFAFF208A4F6700D46F79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D29FFAFD208A4F6700D46F79 /* LaunchScreen.storyboard */; };
 		D29FFB0B208A561500D46F79 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D29FFB0A208A561500D46F79 /* Resnet50.mlmodel */; };
-		D29FFB0D208A585300D46F79 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29FFB0C208A585300D46F79 /* View.swift */; };
+		D29FFB0D208A585300D46F79 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29FFB0C208A585300D46F79 /* CameraView.swift */; };
+		DBF28591208B666A00F9ED7B /* DismissViewTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF28590208B666A00F9ED7B /* DismissViewTemplate.swift */; };
+		DBF285A2208B8EB200F9ED7B /* BaseLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A1208B8EB200F9ED7B /* BaseLanguageViewController.swift */; };
+		DBF285A4208B8EBE00F9ED7B /* TargetLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A3208B8EBE00F9ED7B /* TargetLanguageViewController.swift */; };
+		DBF285A7208B8EE000F9ED7B /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A6208B8EE000F9ED7B /* TextToSpeech.swift */; };
+		DBF285A9208B8EF900F9ED7B /* BaseLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A8208B8EF900F9ED7B /* BaseLanguageView.swift */; };
+		DBF285AB208B8F0800F9ED7B /* TargetLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285AA208B8F0800F9ED7B /* TargetLanguageView.swift */; };
+		DBF285B3208BA49D00F9ED7B /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285B2208BA49D00F9ED7B /* LanguageTableViewCell.swift */; };
+		DBF285B5208BA4F200F9ED7B /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285B4208BA4F200F9ED7B /* Languages.swift */; };
+		DBF285BA208BAE1B00F9ED7B /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285B9208BAE1B00F9ED7B /* UserDefaultsHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D29FFAF1208A4F6700D46F79 /* ImageRecognitionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageRecognitionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29FFAF4208A4F6700D46F79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D29FFAF6208A4F6700D46F79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D29FFAF6208A4F6700D46F79 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		D29FFAFB208A4F6700D46F79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D29FFAFE208A4F6700D46F79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D29FFB00208A4F6700D46F79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D29FFB0A208A561500D46F79 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
-		D29FFB0C208A585300D46F79 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		D29FFB0C208A585300D46F79 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		DBF28590208B666A00F9ED7B /* DismissViewTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissViewTemplate.swift; sourceTree = "<group>"; };
+		DBF285A1208B8EB200F9ED7B /* BaseLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLanguageViewController.swift; sourceTree = "<group>"; };
+		DBF285A3208B8EBE00F9ED7B /* TargetLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetLanguageViewController.swift; sourceTree = "<group>"; };
+		DBF285A6208B8EE000F9ED7B /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
+		DBF285A8208B8EF900F9ED7B /* BaseLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLanguageView.swift; sourceTree = "<group>"; };
+		DBF285AA208B8F0800F9ED7B /* TargetLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetLanguageView.swift; sourceTree = "<group>"; };
+		DBF285B2208BA49D00F9ED7B /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
+		DBF285B4208BA4F200F9ED7B /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
+		DBF285B9208BAE1B00F9ED7B /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +75,63 @@
 			isa = PBXGroup;
 			children = (
 				D29FFAF4208A4F6700D46F79 /* AppDelegate.swift */,
-				D29FFAF6208A4F6700D46F79 /* ViewController.swift */,
-				D29FFB0C208A585300D46F79 /* View.swift */,
 				D29FFAFB208A4F6700D46F79 /* Assets.xcassets */,
 				D29FFAFD208A4F6700D46F79 /* LaunchScreen.storyboard */,
 				D29FFB00208A4F6700D46F79 /* Info.plist */,
 				D29FFB0A208A561500D46F79 /* Resnet50.mlmodel */,
+				DBF2858E208B663C00F9ED7B /* ViewControllers */,
+				DBF285A5208B8EC400F9ED7B /* Models */,
+				DBF2858F208B664B00F9ED7B /* Views */,
+				DBF285B1208BA48600F9ED7B /* Cells */,
+				DBF285B8208BADF200F9ED7B /* Services */,
 			);
 			path = ImageRecognitionTest;
+			sourceTree = "<group>";
+		};
+		DBF2858E208B663C00F9ED7B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D29FFAF6208A4F6700D46F79 /* CameraViewController.swift */,
+				DBF285A1208B8EB200F9ED7B /* BaseLanguageViewController.swift */,
+				DBF285A3208B8EBE00F9ED7B /* TargetLanguageViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DBF2858F208B664B00F9ED7B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D29FFB0C208A585300D46F79 /* CameraView.swift */,
+				DBF28590208B666A00F9ED7B /* DismissViewTemplate.swift */,
+				DBF285A8208B8EF900F9ED7B /* BaseLanguageView.swift */,
+				DBF285AA208B8F0800F9ED7B /* TargetLanguageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DBF285A5208B8EC400F9ED7B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DBF285A6208B8EE000F9ED7B /* TextToSpeech.swift */,
+				DBF285B4208BA4F200F9ED7B /* Languages.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DBF285B1208BA48600F9ED7B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DBF285B2208BA49D00F9ED7B /* LanguageTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DBF285B8208BADF200F9ED7B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DBF285B9208BAE1B00F9ED7B /* UserDefaultsHelper.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,7 +161,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Lisa J";
 				TargetAttributes = {
 					D29FFAF0208A4F6700D46F79 = {
@@ -138,9 +205,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D29FFB0D208A585300D46F79 /* View.swift in Sources */,
-				D29FFAF7208A4F6700D46F79 /* ViewController.swift in Sources */,
+				D29FFB0D208A585300D46F79 /* CameraView.swift in Sources */,
+				DBF285BA208BAE1B00F9ED7B /* UserDefaultsHelper.swift in Sources */,
+				DBF285AB208B8F0800F9ED7B /* TargetLanguageView.swift in Sources */,
+				DBF28591208B666A00F9ED7B /* DismissViewTemplate.swift in Sources */,
+				D29FFAF7208A4F6700D46F79 /* CameraViewController.swift in Sources */,
+				DBF285A4208B8EBE00F9ED7B /* TargetLanguageViewController.swift in Sources */,
+				DBF285B5208BA4F200F9ED7B /* Languages.swift in Sources */,
 				D29FFB0B208A561500D46F79 /* Resnet50.mlmodel in Sources */,
+				DBF285A7208B8EE000F9ED7B /* TextToSpeech.swift in Sources */,
+				DBF285B3208BA49D00F9ED7B /* LanguageTableViewCell.swift in Sources */,
+				DBF285A9208B8EF900F9ED7B /* BaseLanguageView.swift in Sources */,
+				DBF285A2208B8EB200F9ED7B /* BaseLanguageViewController.swift in Sources */,
 				D29FFAF5208A4F6700D46F79 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +249,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -180,6 +257,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -230,6 +308,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -237,6 +316,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
