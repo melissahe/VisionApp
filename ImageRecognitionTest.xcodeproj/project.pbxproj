@@ -16,12 +16,12 @@
 		DBF28591208B666A00F9ED7B /* DismissViewTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF28590208B666A00F9ED7B /* DismissViewTemplate.swift */; };
 		DBF285A2208B8EB200F9ED7B /* BaseLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A1208B8EB200F9ED7B /* BaseLanguageViewController.swift */; };
 		DBF285A4208B8EBE00F9ED7B /* TargetLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A3208B8EBE00F9ED7B /* TargetLanguageViewController.swift */; };
-		DBF285A7208B8EE000F9ED7B /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A6208B8EE000F9ED7B /* TextToSpeech.swift */; };
 		DBF285A9208B8EF900F9ED7B /* BaseLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A8208B8EF900F9ED7B /* BaseLanguageView.swift */; };
 		DBF285AB208B8F0800F9ED7B /* TargetLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285AA208B8F0800F9ED7B /* TargetLanguageView.swift */; };
 		DBF285B3208BA49D00F9ED7B /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285B2208BA49D00F9ED7B /* LanguageTableViewCell.swift */; };
 		DBF285B5208BA4F200F9ED7B /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285B4208BA4F200F9ED7B /* Languages.swift */; };
 		DBF285BA208BAE1B00F9ED7B /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285B9208BAE1B00F9ED7B /* UserDefaultsHelper.swift */; };
+		DBF285C0208BE2C700F9ED7B /* example.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DBF285BF208BE2C700F9ED7B /* example.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,12 +36,12 @@
 		DBF28590208B666A00F9ED7B /* DismissViewTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissViewTemplate.swift; sourceTree = "<group>"; };
 		DBF285A1208B8EB200F9ED7B /* BaseLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLanguageViewController.swift; sourceTree = "<group>"; };
 		DBF285A3208B8EBE00F9ED7B /* TargetLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetLanguageViewController.swift; sourceTree = "<group>"; };
-		DBF285A6208B8EE000F9ED7B /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
 		DBF285A8208B8EF900F9ED7B /* BaseLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLanguageView.swift; sourceTree = "<group>"; };
 		DBF285AA208B8F0800F9ED7B /* TargetLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetLanguageView.swift; sourceTree = "<group>"; };
 		DBF285B2208BA49D00F9ED7B /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
 		DBF285B4208BA4F200F9ED7B /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		DBF285B9208BAE1B00F9ED7B /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		DBF285BF208BE2C700F9ED7B /* example.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = example.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +79,7 @@
 				D29FFAFD208A4F6700D46F79 /* LaunchScreen.storyboard */,
 				D29FFB00208A4F6700D46F79 /* Info.plist */,
 				D29FFB0A208A561500D46F79 /* Resnet50.mlmodel */,
+				DBF285BF208BE2C700F9ED7B /* example.mp3 */,
 				DBF2858E208B663C00F9ED7B /* ViewControllers */,
 				DBF285A5208B8EC400F9ED7B /* Models */,
 				DBF2858F208B664B00F9ED7B /* Views */,
@@ -112,7 +113,6 @@
 		DBF285A5208B8EC400F9ED7B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DBF285A6208B8EE000F9ED7B /* TextToSpeech.swift */,
 				DBF285B4208BA4F200F9ED7B /* Languages.swift */,
 			);
 			path = Models;
@@ -193,6 +193,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBF285C0208BE2C700F9ED7B /* example.mp3 in Resources */,
 				D29FFAFF208A4F6700D46F79 /* LaunchScreen.storyboard in Resources */,
 				D29FFAFC208A4F6700D46F79 /* Assets.xcassets in Resources */,
 			);
@@ -213,7 +214,6 @@
 				DBF285A4208B8EBE00F9ED7B /* TargetLanguageViewController.swift in Sources */,
 				DBF285B5208BA4F200F9ED7B /* Languages.swift in Sources */,
 				D29FFB0B208A561500D46F79 /* Resnet50.mlmodel in Sources */,
-				DBF285A7208B8EE000F9ED7B /* TextToSpeech.swift in Sources */,
 				DBF285B3208BA49D00F9ED7B /* LanguageTableViewCell.swift in Sources */,
 				DBF285A9208B8EF900F9ED7B /* BaseLanguageView.swift in Sources */,
 				DBF285A2208B8EB200F9ED7B /* BaseLanguageViewController.swift in Sources */,
