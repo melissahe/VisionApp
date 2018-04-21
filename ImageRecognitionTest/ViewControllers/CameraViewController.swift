@@ -20,7 +20,8 @@ class CameraViewController: UIViewController , AVCaptureVideoDataOutputSampleBuf
         setupCaptureSession()
         view.addSubview(cameraView)
         cameraView.button.addTarget(self, action: #selector(translate), for: .touchUpInside)
-        
+        cameraView.baseLanguageButton.addTarget(self, action: #selector(baseLanguageButtonAction), for: .touchUpInside)
+        cameraView.targetLanguageButton.addTarget(self, action: #selector(targetLanguageButtonAction), for: .touchUpInside)
     }
     
     func setupCaptureSession() {
@@ -71,9 +72,17 @@ class CameraViewController: UIViewController , AVCaptureVideoDataOutputSampleBuf
     }
     
     @objc func translate() {
-        print(cameraView.label.text)
+        print(cameraView.label.text ?? "??")
     }
-
+    
+    @objc func baseLanguageButtonAction() {
+        print("Make a pickerview for a base language appear")
+    }
+    
+    @objc func targetLanguageButtonAction() {
+        print("Make a pickerview for a target language appear")
+    }
+    
 }
 
 
