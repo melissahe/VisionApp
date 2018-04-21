@@ -14,6 +14,11 @@
 		D29FFB0B208A561500D46F79 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D29FFB0A208A561500D46F79 /* Resnet50.mlmodel */; };
 		D29FFB0D208A585300D46F79 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29FFB0C208A585300D46F79 /* CameraView.swift */; };
 		DBF28591208B666A00F9ED7B /* DismissViewTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF28590208B666A00F9ED7B /* DismissViewTemplate.swift */; };
+		DBF285A2208B8EB200F9ED7B /* BaseLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A1208B8EB200F9ED7B /* BaseLanguageViewController.swift */; };
+		DBF285A4208B8EBE00F9ED7B /* TargetLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A3208B8EBE00F9ED7B /* TargetLanguageViewController.swift */; };
+		DBF285A7208B8EE000F9ED7B /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A6208B8EE000F9ED7B /* TextToSpeech.swift */; };
+		DBF285A9208B8EF900F9ED7B /* BaseLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A8208B8EF900F9ED7B /* BaseLanguageView.swift */; };
+		DBF285AB208B8F0800F9ED7B /* TargetLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285AA208B8F0800F9ED7B /* TargetLanguageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		D29FFB0A208A561500D46F79 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		D29FFB0C208A585300D46F79 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		DBF28590208B666A00F9ED7B /* DismissViewTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissViewTemplate.swift; sourceTree = "<group>"; };
+		DBF285A1208B8EB200F9ED7B /* BaseLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLanguageViewController.swift; sourceTree = "<group>"; };
+		DBF285A3208B8EBE00F9ED7B /* TargetLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetLanguageViewController.swift; sourceTree = "<group>"; };
+		DBF285A6208B8EE000F9ED7B /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
+		DBF285A8208B8EF900F9ED7B /* BaseLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLanguageView.swift; sourceTree = "<group>"; };
+		DBF285AA208B8F0800F9ED7B /* TargetLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetLanguageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,7 @@
 			children = (
 				D29FFAF4208A4F6700D46F79 /* AppDelegate.swift */,
 				DBF2858E208B663C00F9ED7B /* ViewControllers */,
+				DBF285A5208B8EC400F9ED7B /* Models */,
 				DBF2858F208B664B00F9ED7B /* Views */,
 				D29FFAFB208A4F6700D46F79 /* Assets.xcassets */,
 				D29FFAFD208A4F6700D46F79 /* LaunchScreen.storyboard */,
@@ -73,6 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				D29FFAF6208A4F6700D46F79 /* CameraViewController.swift */,
+				DBF285A1208B8EB200F9ED7B /* BaseLanguageViewController.swift */,
+				DBF285A3208B8EBE00F9ED7B /* TargetLanguageViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -82,8 +95,18 @@
 			children = (
 				D29FFB0C208A585300D46F79 /* CameraView.swift */,
 				DBF28590208B666A00F9ED7B /* DismissViewTemplate.swift */,
+				DBF285A8208B8EF900F9ED7B /* BaseLanguageView.swift */,
+				DBF285AA208B8F0800F9ED7B /* TargetLanguageView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DBF285A5208B8EC400F9ED7B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DBF285A6208B8EE000F9ED7B /* TextToSpeech.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,9 +181,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D29FFB0D208A585300D46F79 /* CameraView.swift in Sources */,
+				DBF285AB208B8F0800F9ED7B /* TargetLanguageView.swift in Sources */,
 				DBF28591208B666A00F9ED7B /* DismissViewTemplate.swift in Sources */,
 				D29FFAF7208A4F6700D46F79 /* CameraViewController.swift in Sources */,
+				DBF285A4208B8EBE00F9ED7B /* TargetLanguageViewController.swift in Sources */,
 				D29FFB0B208A561500D46F79 /* Resnet50.mlmodel in Sources */,
+				DBF285A7208B8EE000F9ED7B /* TextToSpeech.swift in Sources */,
+				DBF285A9208B8EF900F9ED7B /* BaseLanguageView.swift in Sources */,
+				DBF285A2208B8EB200F9ED7B /* BaseLanguageViewController.swift in Sources */,
 				D29FFAF5208A4F6700D46F79 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

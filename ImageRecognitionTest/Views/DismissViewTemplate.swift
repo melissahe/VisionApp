@@ -9,7 +9,7 @@
 import UIKit
 
 class DismissViewTemplate: UIView {
-
+    
     lazy var dismissView: UIButton = {
         let button = UIButton(frame: UIScreen.main.bounds) //This tells the button to be the size of the screen
         button.backgroundColor = .clear
@@ -46,7 +46,7 @@ class DismissViewTemplate: UIView {
     }
     
     private func setupBlurEffectView() {
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.extraLight) // .light, .dark, .prominent, .regular, .extraLight
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark) // .light, .dark, .prominent, .regular, .extraLight
         let visualEffect = UIVisualEffectView(frame: UIScreen.main.bounds)
         visualEffect.effect = blurEffect
         addSubview(visualEffect)
@@ -65,6 +65,6 @@ class DismissViewTemplate: UIView {
         containerView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.8).isActive = true
     }
     
-
-
+    
+    
 }

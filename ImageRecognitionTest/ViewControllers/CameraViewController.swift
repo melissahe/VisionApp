@@ -13,6 +13,8 @@ import Vision
 class CameraViewController: UIViewController , AVCaptureVideoDataOutputSampleBufferDelegate {
     
     let cameraView = CameraView()
+    let baseLanguageVC = BaseLanguageViewController()
+    let targetLanguageVC = TargetLanguageViewController()
     
     
     override func viewDidLoad() {
@@ -77,10 +79,28 @@ class CameraViewController: UIViewController , AVCaptureVideoDataOutputSampleBuf
     
     @objc func baseLanguageButtonAction() {
         print("Make a pickerview for a base language appear")
+        let transition = CATransition()
+        transition.duration = 0.3
+        transition.type = kCATransitionMoveIn
+        transition.subtype = kCATransitionFromLeft
+        transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        baseLanguageVC.modalTransitionStyle = .crossDissolve
+        baseLanguageVC.modalPresentationStyle = .overCurrentContext
+        present(baseLanguageVC, animated: false, completion: nil)
     }
     
     @objc func targetLanguageButtonAction() {
         print("Make a pickerview for a target language appear")
+        let transition = CATransition()
+        transition.duration = 0.3
+        transition.type = kCATransitionMoveIn
+        transition.subtype = kCATransitionFromRight
+        transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        targetLanguageVC.modalTransitionStyle = .crossDissolve
+        targetLanguageVC.modalPresentationStyle = .overCurrentContext
+        present(targetLanguageVC, animated: false, completion: nil)
     }
     
 }
