@@ -39,7 +39,7 @@ class BaseLanguageViewController: UIViewController, UITableViewDelegate, UITable
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: Tableview DataSource and Delegate
+    //MARK: Tableview DataSource and Delegates
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Languages.allLanguages.count
     }
@@ -51,5 +51,9 @@ class BaseLanguageViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let testData = Languages.allLanguages[indexPath.row]
+        baseLanguageView.label.text = testData
+    }
     
 }

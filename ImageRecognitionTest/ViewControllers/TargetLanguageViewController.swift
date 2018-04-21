@@ -45,7 +45,7 @@ class TargetLanguageViewController: UIViewController, UITableViewDelegate, UITab
         return Languages.allLanguages.count
     }
     
-    //MARK: Tableview DataSource and Delegate
+    //MARK: Tableview DataSource and Delegates
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let testData = Languages.allLanguages[indexPath.row]
         let cell = targetLanguageView.tableView.dequeueReusableCell(withIdentifier: "Language Cell", for: indexPath) as! LanguageTableViewCell
@@ -53,6 +53,10 @@ class TargetLanguageViewController: UIViewController, UITableViewDelegate, UITab
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let testData = Languages.allLanguages[indexPath.row]
+        targetLanguageView.label.text = testData
+    }
     
     
 }
