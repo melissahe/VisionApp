@@ -21,6 +21,7 @@
 		DBF285AB208B8F0800F9ED7B /* TargetLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285AA208B8F0800F9ED7B /* TargetLanguageView.swift */; };
 		DBF285B3208BA49D00F9ED7B /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285B2208BA49D00F9ED7B /* LanguageTableViewCell.swift */; };
 		DBF285B5208BA4F200F9ED7B /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285B4208BA4F200F9ED7B /* Languages.swift */; };
+		DBF285BA208BAE1B00F9ED7B /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285B9208BAE1B00F9ED7B /* UserDefaultsHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		DBF285AA208B8F0800F9ED7B /* TargetLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetLanguageView.swift; sourceTree = "<group>"; };
 		DBF285B2208BA49D00F9ED7B /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
 		DBF285B4208BA4F200F9ED7B /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
+		DBF285B9208BAE1B00F9ED7B /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,14 +75,15 @@
 			isa = PBXGroup;
 			children = (
 				D29FFAF4208A4F6700D46F79 /* AppDelegate.swift */,
-				DBF285B1208BA48600F9ED7B /* Cells */,
-				DBF2858E208B663C00F9ED7B /* ViewControllers */,
-				DBF285A5208B8EC400F9ED7B /* Models */,
-				DBF2858F208B664B00F9ED7B /* Views */,
 				D29FFAFB208A4F6700D46F79 /* Assets.xcassets */,
 				D29FFAFD208A4F6700D46F79 /* LaunchScreen.storyboard */,
 				D29FFB00208A4F6700D46F79 /* Info.plist */,
 				D29FFB0A208A561500D46F79 /* Resnet50.mlmodel */,
+				DBF2858E208B663C00F9ED7B /* ViewControllers */,
+				DBF285A5208B8EC400F9ED7B /* Models */,
+				DBF2858F208B664B00F9ED7B /* Views */,
+				DBF285B1208BA48600F9ED7B /* Cells */,
+				DBF285B8208BADF200F9ED7B /* Services */,
 			);
 			path = ImageRecognitionTest;
 			sourceTree = "<group>";
@@ -121,6 +124,14 @@
 				DBF285B2208BA49D00F9ED7B /* LanguageTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		DBF285B8208BADF200F9ED7B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DBF285B9208BAE1B00F9ED7B /* UserDefaultsHelper.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D29FFB0D208A585300D46F79 /* CameraView.swift in Sources */,
+				DBF285BA208BAE1B00F9ED7B /* UserDefaultsHelper.swift in Sources */,
 				DBF285AB208B8F0800F9ED7B /* TargetLanguageView.swift in Sources */,
 				DBF28591208B666A00F9ED7B /* DismissViewTemplate.swift in Sources */,
 				D29FFAF7208A4F6700D46F79 /* CameraViewController.swift in Sources */,
