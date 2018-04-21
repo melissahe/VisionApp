@@ -8,7 +8,7 @@
 
 import UIKit
 
-class View: UIView {
+class CameraView: UIView {
     
     let button: UIButton = {
         let button = UIButton()

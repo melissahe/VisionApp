@@ -10,16 +10,16 @@ import UIKit
 import AVFoundation
 import Vision
 
-class ViewController: UIViewController , AVCaptureVideoDataOutputSampleBufferDelegate {
+class CameraViewController: UIViewController , AVCaptureVideoDataOutputSampleBufferDelegate {
     
-    let homeView = View()
+    let cameraView = CameraView()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCaptureSession()
-        view.addSubview(homeView)
-        homeView.button.addTarget(self, action: #selector(translate), for: .touchUpInside)
+        view.addSubview(cameraView)
+        cameraView.button.addTarget(self, action: #selector(translate), for: .touchUpInside)
         
     }
     
@@ -61,7 +61,7 @@ class ViewController: UIViewController , AVCaptureVideoDataOutputSampleBufferDel
             guard let Observation = results.first else { return }
             
             DispatchQueue.main.async(execute: {
-                self.homeView.label.text = "\(Observation.identifier)"
+                self.cameraView.label.text = "\(Observation.identifier)"
             })
         }
         guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
@@ -71,7 +71,7 @@ class ViewController: UIViewController , AVCaptureVideoDataOutputSampleBufferDel
     }
     
     @objc func translate() {
-        print(homeView.label.text)
+        print(cameraView.label.text)
     }
 
 }
