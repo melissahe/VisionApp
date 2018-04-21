@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TargetLanguageViewController: UIViewController {
+class TargetLanguageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let targetLanguageView = TargetLanguageView()
     
@@ -17,6 +17,8 @@ class TargetLanguageViewController: UIViewController {
         
         view.addSubview(targetLanguageView)
         targetLanguageView.dismissView.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
+        targetLanguageView.tableView.dataSource = self
+        targetLanguageView.tableView.delegate = self
     }
     
     @objc func dismissView() {
@@ -38,6 +40,18 @@ class TargetLanguageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Languages.allLanguages.count
+    }
+    
+    //MARK: Tableview DataSource and Delegate
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let testData = Languages.allLanguages[indexPath.row]
+        let cell = targetLanguageView.tableView.dequeueReusableCell(withIdentifier: "Language Cell", for: indexPath) as! LanguageTableViewCell
+        cell.placeLabel.text = testData
+        return cell
+    }
     
     
     
