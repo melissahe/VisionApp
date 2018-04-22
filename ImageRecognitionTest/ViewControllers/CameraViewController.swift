@@ -37,15 +37,21 @@ class CameraViewController: UIViewController , AVCaptureVideoDataOutputSampleBuf
     
     var player: AVAudioPlayer?
     
-    func playSound() {
-        let path = Bundle.main.path(forResource: "example", ofType:"mp3")!
-        let url = URL(fileURLWithPath: path)
-        //AVAudioPlayer.ini
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            player?.play()
-        } catch {
-            // couldn't load file :(
+    func playSound(forText text: String, withLanguage language: String) {
+        TextToSpeechAPI.manager.getSpeechData(forText: text, inLanguage: language) {[weak self] (data, error) in
+            self!.cameraView.stopActivityImageView()
+            if let data = data, let strongSelf = self {
+                do {
+                    strongSelf.player = try AVAudioPlayer(data: data)
+                    strongSelf.player?.play()
+                } catch {
+                    // couldn't load file :( do some error handling
+                    print(error)
+                }
+                
+            } else if let error = error {
+                print(error)
+            }
         }
     }
     
@@ -87,7 +93,7 @@ class CameraViewController: UIViewController , AVCaptureVideoDataOutputSampleBuf
             guard let Observation = results.first else { return }
             
             DispatchQueue.main.async(execute: {
-                self.cameraView.label.text = "\(Observation.identifier)"
+                self.cameraView.untranslatedLabel.text = "\(Observation.identifier)"
             })
         }
         guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
@@ -97,9 +103,18 @@ class CameraViewController: UIViewController , AVCaptureVideoDataOutputSampleBuf
     }
     
     @objc func translate() {
-        print(cameraView.label.text ?? "??")
-        // TODO: API CALL GOES HERE
-        playSound()
+        cameraView.spinActivityImageView()
+        print(cameraView.untranslatedLabel.text ?? "??")
+        let text = cameraView.untranslatedLabel.text ?? ""
+        Translation.manager.translateLang(text: text, targetLanguage: currentTargetLanguage) {[weak self] (translatedText, error) in
+            if let translatedText = translatedText {
+                self!.cameraView.translatedLabel.text = translatedText
+                self!.playSound(forText: translatedText, withLanguage: self!.currentTargetLanguage)
+            } else if let error = error {
+                //error handling needed
+                print(error)
+            }
+        }
     }
     
     @objc func baseLanguageButtonAction() {
@@ -131,6 +146,9 @@ class CameraViewController: UIViewController , AVCaptureVideoDataOutputSampleBuf
 extension CameraViewController: TargetLanguageDelegate {
     func passSelectedTargetLanguageToCameraVC(selectedLanguage: String) {
         self.currentTargetLanguage = selectedLanguage
+        let stringArray = Array(selectedLanguage).map{String($0)}
+        let stringSeparatedByBreaks = stringArray.joined(separator: "\n")
+        cameraView.baseLanguageButton.setTitle(stringSeparatedByBreaks, for: .normal)
     }
 }
 extension CameraViewController: BaseLanguageDelegate {
