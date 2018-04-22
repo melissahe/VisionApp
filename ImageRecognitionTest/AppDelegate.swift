@@ -16,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
         [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        //to speed up retrieve of voice audio data
+        TextToSpeechAPI.manager.getAuthToken { (_, _) in
+            //only meant to make this function faster
+        }
         window = UIWindow()
         window?.makeKeyAndVisible()
         let vc = CameraViewController()
