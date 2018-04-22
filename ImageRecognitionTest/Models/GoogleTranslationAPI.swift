@@ -20,6 +20,38 @@ struct TranslationWrapper: Codable {
 }
 
 class Translation {
+    var languageDict = ["Arabic":"ar",
+                        "Bulgarian":"bg",
+                        "Catalan":"ca",
+                        "Chinese":"zh-TW",
+                        "Croatian":"hr",
+                        "Czech":"cs",
+                        "Danish":"da",
+                        "Dutch":"nl",
+                        "German":"de",
+                        "Greek":"el",
+                        "English":"en",
+                        "Finnish":"fi",
+                        "French":"fr",
+                        "Hebrew":"iw",
+                        "Hindi":"hi",
+                        "Hungarian":"hu",
+                        "Indonesian":"id",
+                        "Italy":"it",
+                        "Japan":"ja",
+                        "Korean":"ko",
+                        "Malay":"ms",
+                        "Norwegian":"no",
+                        "Polish":"pl",
+                        "Portugese":"pt",
+                        "Romanian":"ro",
+                        "Slovak":"sk",
+                        "Spanish":"es",
+                        "Swedish":"sv",
+                        "Tamil":"ta",
+                        "Thai":"th",
+                        "Turkish":"tr",
+                        "Vietnamese":"vi"]
     static let manager = Translation()
     private init() {}
     public func translateLang(text: String, targetLanguage: String, source: String, callback: @escaping (_ translatedText: String?, _ error: Error?) -> ()) {
