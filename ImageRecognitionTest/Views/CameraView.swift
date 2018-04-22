@@ -10,18 +10,35 @@ import UIKit
 
 class CameraView: UIView {
     
+    lazy var activityImageView: UIImageView = {
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "activityIndicator"))
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
     lazy var button: UIButton = {
         let button = UIButton()
         button.setTitle("Translate", for: .normal)
-        button.backgroundColor = .black
+        button.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha:0.8)
         return button
     }()
     
-    lazy var label: UILabel = {
+    lazy var untranslatedLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Label"
+        label.text = ""
+        label.font = label.font.withSize(30)
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        return label
+    }()
+    
+    lazy var translatedLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Translated Text Here"
         label.font = label.font.withSize(30)
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -30,7 +47,15 @@ class CameraView: UIView {
     
     lazy var baseLanguageButton: UIButton = {
         let button = UIButton()
-        button.setTitle("B\na\ns\ne\n \nL\na\nn\ng\nu\na\ng\ne", for: .normal)
+        var title: String?
+        if let targetLanguage = UserDefaultsHelper.manager.getTargetLanguage() {
+            let stringArray = Array(targetLanguage).map{String($0)}
+            let stringSeparatedByBreaks = stringArray.joined(separator: "\n")
+            title = stringSeparatedByBreaks
+        } else {
+            title = "N\no\n \nL\na\nn\ng\nu\na\ng\ne\n \nS\ne\nt"
+        }
+        button.setTitle(title, for: .normal)
         button.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha:0.5)
         button.titleLabel?.font =  UIFont(name: "HelveticaNeue-Medium", size: 17.0)
         button.titleLabel?.lineBreakMode = .byCharWrapping
@@ -58,8 +83,26 @@ class CameraView: UIView {
         commonInit()
     }
     
+    public func spinActivityImageView() {
+        activityImageView.isHidden = false
+        let spinAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        spinAnimation.fromValue = 0
+        spinAnimation.toValue = 2 * Float.pi
+        spinAnimation.duration = 0.7
+        spinAnimation.repeatCount = Float.infinity
+        spinAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        activityImageView.layer.add(spinAnimation, forKey: nil)
+    }
+    
+    public func stopActivityImageView() {
+        activityImageView.isHidden = true
+        activityImageView.layer.removeAllAnimations()
+    }
+    
     private func commonInit() {
         setupViews()
+        baseLanguageButton.isUserInteractionEnabled = false
+        activityImageView.isHidden = true
     }
     
     override func layoutSubviews() {
@@ -69,27 +112,49 @@ class CameraView: UIView {
     }
     
     private func setupViews() {
-        setupLabel()
         setupButton()
+        setupTranslatedLabel()
+        setupActivityImageView()
+        setupUntranslatedLabel()
         setupBaseLanguageButton()
-        setupTargetLangaugeButton()
-    }
-    
-    private func setupLabel() {
-        addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor).isActive = true
-        label.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -50).isActive = true
-        label.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 1).isActive = true
-        label.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.20).isActive = true
+        setupTargetLanguageButton()
     }
     
     private func setupButton() {
         addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
-        button.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 1).isActive = true
+        button.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor).isActive = true
+        button.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
         button.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor).isActive = true
+        button.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.10).isActive = true
+    }
+    
+    private func setupTranslatedLabel() {
+        addSubview(translatedLabel)
+        translatedLabel.translatesAutoresizingMaskIntoConstraints = false
+        translatedLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor).isActive = true
+        translatedLabel.bottomAnchor.constraint(equalTo: button.topAnchor).isActive = true
+        translatedLabel.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 1).isActive = true
+        translatedLabel.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.20).isActive = true
+    }
+    
+    private func setupActivityImageView() {
+        addSubview(activityImageView)
+        
+        activityImageView.translatesAutoresizingMaskIntoConstraints = false
+        activityImageView.bottomAnchor.constraint(equalTo: translatedLabel.topAnchor).isActive = true
+        activityImageView.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor).isActive = true
+        activityImageView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.05).isActive = true
+    }
+    
+    private func setupUntranslatedLabel() {
+        addSubview(untranslatedLabel)
+        
+        untranslatedLabel.translatesAutoresizingMaskIntoConstraints = false
+        untranslatedLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor).isActive = true
+        untranslatedLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
+        untranslatedLabel.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 0.85).isActive = true
+        untranslatedLabel.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.30).isActive = true
     }
     
     private func setupBaseLanguageButton() {
@@ -102,7 +167,7 @@ class CameraView: UIView {
         
     }
     
-    private func setupTargetLangaugeButton() {
+    private func setupTargetLanguageButton() {
         addSubview(targetLanguageButton)
         targetLanguageButton.translatesAutoresizingMaskIntoConstraints = false
         targetLanguageButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor).isActive = true
