@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		811BC270208BDBE40015F033 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811BC26F208BDBE40015F033 /* NetworkHelper.swift */; };
 		D29FFAF5208A4F6700D46F79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29FFAF4208A4F6700D46F79 /* AppDelegate.swift */; };
 		D29FFAF7208A4F6700D46F79 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29FFAF6208A4F6700D46F79 /* CameraViewController.swift */; };
 		D29FFAFC208A4F6700D46F79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29FFAFB208A4F6700D46F79 /* Assets.xcassets */; };
@@ -16,7 +17,7 @@
 		DBF28591208B666A00F9ED7B /* DismissViewTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF28590208B666A00F9ED7B /* DismissViewTemplate.swift */; };
 		DBF285A2208B8EB200F9ED7B /* BaseLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A1208B8EB200F9ED7B /* BaseLanguageViewController.swift */; };
 		DBF285A4208B8EBE00F9ED7B /* TargetLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A3208B8EBE00F9ED7B /* TargetLanguageViewController.swift */; };
-		DBF285A7208B8EE000F9ED7B /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A6208B8EE000F9ED7B /* TextToSpeech.swift */; };
+		DBF285A7208B8EE000F9ED7B /* TextToSpeechAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A6208B8EE000F9ED7B /* TextToSpeechAPI.swift */; };
 		DBF285A9208B8EF900F9ED7B /* BaseLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A8208B8EF900F9ED7B /* BaseLanguageView.swift */; };
 		DBF285AB208B8F0800F9ED7B /* TargetLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285AA208B8F0800F9ED7B /* TargetLanguageView.swift */; };
 		DBF285B3208BA49D00F9ED7B /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285B2208BA49D00F9ED7B /* LanguageTableViewCell.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		811BC26F208BDBE40015F033 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		D29FFAF1208A4F6700D46F79 /* ImageRecognitionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageRecognitionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29FFAF4208A4F6700D46F79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D29FFAF6208A4F6700D46F79 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -36,7 +38,7 @@
 		DBF28590208B666A00F9ED7B /* DismissViewTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissViewTemplate.swift; sourceTree = "<group>"; };
 		DBF285A1208B8EB200F9ED7B /* BaseLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLanguageViewController.swift; sourceTree = "<group>"; };
 		DBF285A3208B8EBE00F9ED7B /* TargetLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetLanguageViewController.swift; sourceTree = "<group>"; };
-		DBF285A6208B8EE000F9ED7B /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
+		DBF285A6208B8EE000F9ED7B /* TextToSpeechAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeechAPI.swift; sourceTree = "<group>"; };
 		DBF285A8208B8EF900F9ED7B /* BaseLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLanguageView.swift; sourceTree = "<group>"; };
 		DBF285AA208B8F0800F9ED7B /* TargetLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetLanguageView.swift; sourceTree = "<group>"; };
 		DBF285B2208BA49D00F9ED7B /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
@@ -112,7 +114,8 @@
 		DBF285A5208B8EC400F9ED7B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DBF285A6208B8EE000F9ED7B /* TextToSpeech.swift */,
+				811BC26F208BDBE40015F033 /* NetworkHelper.swift */,
+				DBF285A6208B8EE000F9ED7B /* TextToSpeechAPI.swift */,
 				DBF285B4208BA4F200F9ED7B /* Languages.swift */,
 			);
 			path = Models;
@@ -205,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				811BC270208BDBE40015F033 /* NetworkHelper.swift in Sources */,
 				D29FFB0D208A585300D46F79 /* CameraView.swift in Sources */,
 				DBF285BA208BAE1B00F9ED7B /* UserDefaultsHelper.swift in Sources */,
 				DBF285AB208B8F0800F9ED7B /* TargetLanguageView.swift in Sources */,
@@ -213,7 +217,7 @@
 				DBF285A4208B8EBE00F9ED7B /* TargetLanguageViewController.swift in Sources */,
 				DBF285B5208BA4F200F9ED7B /* Languages.swift in Sources */,
 				D29FFB0B208A561500D46F79 /* Resnet50.mlmodel in Sources */,
-				DBF285A7208B8EE000F9ED7B /* TextToSpeech.swift in Sources */,
+				DBF285A7208B8EE000F9ED7B /* TextToSpeechAPI.swift in Sources */,
 				DBF285B3208BA49D00F9ED7B /* LanguageTableViewCell.swift in Sources */,
 				DBF285A9208B8EF900F9ED7B /* BaseLanguageView.swift in Sources */,
 				DBF285A2208B8EB200F9ED7B /* BaseLanguageViewController.swift in Sources */,
