@@ -9,7 +9,7 @@
 import Foundation
 
 class Languages {
-    static var allLanguages = ["Arabic", "Bulgarian", "Catalan", "Chinese", "Croatian", "Czech", "Danish", "Dutch", "German", "Greek", "English", "Finnish", "French", "Hebrew", "Hindi", "Hungarian", "Indonesian", "Italy", "Japan", "Korean", "Malay", "Norwegian", "Polish", "Portugese", "Romanian", "Slovak", "Spanish", "Swedish", "Tamil", "Thai", "Turkish", "Vietnamese"]
+    static var allLanguages = ["Arabic", "Bulgarian", "Catalan", "Chinese", "Croatian", "Czech", "Danish", "Dutch", "German", "Greek", "English", "Finnish", "French", "Hebrew", "Hindi", "Hungarian", "Indonesian", "Italian", "Japanese", "Korean", "Malay", "Norwegian", "Polish", "Portugese", "Romanian", "Slovak", "Spanish", "Swedish", "Tamil", "Thai", "Turkish", "Vietnamese"]
     static var currentBaseLanguage = ""  {
         didSet {
             UserDefaultsHelper.manager.setBaseLanguage(to: currentBaseLanguage)
