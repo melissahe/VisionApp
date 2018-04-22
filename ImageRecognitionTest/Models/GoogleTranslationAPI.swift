@@ -37,8 +37,8 @@ class Translation {
                         "Hindi":"hi",
                         "Hungarian":"hu",
                         "Indonesian":"id",
-                        "Italy":"it",
-                        "Japan":"ja",
+                        "Italian":"it",
+                        "Japanese":"ja",
                         "Korean":"ko",
                         "Malay":"ms",
                         "Norwegian":"no",
@@ -54,17 +54,27 @@ class Translation {
                         "Vietnamese":"vi"]
     static let manager = Translation()
     private init() {}
-    public func translateLang(text: String, targetLanguage: String, source: String, callback: @escaping (_ translatedText: String?, _ error: Error?) -> ()) {
+    public func translateLang(text: String, targetLanguage: String, callback: @escaping (_ translatedText: String?, _ error: Error?) -> ()) {
+        //if base language == translated language, just return text
+        if targetLanguage == "English" {
+            callback(text, nil)
+            return
+        }
         let apiKey = "AIzaSyAcHVPnSW2jo_45RIh6zqp_3EGHJO8y610"
         
         var request = URLRequest(url: URL(string: "https://translation.googleapis.com/language/translate/v2?key=\(apiKey)")!)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue(Bundle.main.bundleIdentifier ?? "", forHTTPHeaderField: "X-Ios-Bundle-Identifier")
+        guard let languageCode = languageDict[targetLanguage] else {
+            callback(nil, nil)
+            print("couldn't get language code")
+            return
+        }
         let jsonRequest = [
             "q": text,
             "source": "en",
-            "target": targetLanguage,
+            "target": languageCode,
             "format": "text"]
         let jsonEncoder = JSONEncoder()
         let json = try! jsonEncoder.encode(jsonRequest)
