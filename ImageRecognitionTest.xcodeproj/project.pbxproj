@@ -15,6 +15,7 @@
 		D29FFAFF208A4F6700D46F79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D29FFAFD208A4F6700D46F79 /* LaunchScreen.storyboard */; };
 		D29FFB0B208A561500D46F79 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D29FFB0A208A561500D46F79 /* Resnet50.mlmodel */; };
 		D29FFB0D208A585300D46F79 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29FFB0C208A585300D46F79 /* CameraView.swift */; };
+		DBB55CEE208C2203008F1F86 /* AdvertisementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB55CED208C2203008F1F86 /* AdvertisementView.swift */; };
 		DBF28591208B666A00F9ED7B /* DismissViewTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF28590208B666A00F9ED7B /* DismissViewTemplate.swift */; };
 		DBF285A2208B8EB200F9ED7B /* BaseLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A1208B8EB200F9ED7B /* BaseLanguageViewController.swift */; };
 		DBF285A4208B8EBE00F9ED7B /* TargetLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF285A3208B8EBE00F9ED7B /* TargetLanguageViewController.swift */; };
@@ -38,6 +39,7 @@
 		D29FFB00208A4F6700D46F79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D29FFB0A208A561500D46F79 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		D29FFB0C208A585300D46F79 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		DBB55CED208C2203008F1F86 /* AdvertisementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementView.swift; sourceTree = "<group>"; };
 		DBF28590208B666A00F9ED7B /* DismissViewTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissViewTemplate.swift; sourceTree = "<group>"; };
 		DBF285A1208B8EB200F9ED7B /* BaseLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLanguageViewController.swift; sourceTree = "<group>"; };
 		DBF285A3208B8EBE00F9ED7B /* TargetLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetLanguageViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				D29FFB0C208A585300D46F79 /* CameraView.swift */,
+				DBB55CED208C2203008F1F86 /* AdvertisementView.swift */,
 				DBF28590208B666A00F9ED7B /* DismissViewTemplate.swift */,
 				DBF285A8208B8EF900F9ED7B /* BaseLanguageView.swift */,
 				DBF285AA208B8F0800F9ED7B /* TargetLanguageView.swift */,
@@ -230,6 +233,7 @@
 				DBF285B3208BA49D00F9ED7B /* LanguageTableViewCell.swift in Sources */,
 				DBF285A9208B8EF900F9ED7B /* BaseLanguageView.swift in Sources */,
 				DBF285A2208B8EB200F9ED7B /* BaseLanguageViewController.swift in Sources */,
+				DBB55CEE208C2203008F1F86 /* AdvertisementView.swift in Sources */,
 				D29FFAF5208A4F6700D46F79 /* AppDelegate.swift in Sources */,
 				81764C64208BE0D90062EA5D /* GoogleTranslationAPI.swift in Sources */,
 			);
