@@ -35,6 +35,20 @@ class CameraViewController: UIViewController , AVCaptureVideoDataOutputSampleBuf
         }
     }
     
+    var player: AVAudioPlayer?
+    
+    func playSound() {
+        let path = Bundle.main.path(forResource: "example", ofType:"mp3")!
+        let url = URL(fileURLWithPath: path)
+        //AVAudioPlayer.ini
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        } catch {
+            // couldn't load file :(
+        }
+    }
+    
     func setupCaptureSession() {
         let captureSession = AVCaptureSession()
         
@@ -85,6 +99,7 @@ class CameraViewController: UIViewController , AVCaptureVideoDataOutputSampleBuf
     @objc func translate() {
         print(cameraView.label.text ?? "??")
         // TODO: API CALL GOES HERE
+        playSound()
     }
     
     @objc func baseLanguageButtonAction() {
