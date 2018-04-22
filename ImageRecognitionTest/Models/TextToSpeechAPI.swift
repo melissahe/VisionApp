@@ -30,8 +30,8 @@ class TextToSpeechAPI {
         "Hindi" : ("hi-IN", "Microsoft Server Speech Text to Speech Voice (hi-IN, Kalpana)"),
         "Hungarian" : ("hu-HU", "Microsoft Server Speech Text to Speech Voice (hu-HU, Szabolcs)"),
         "Indonesian" : ("id-ID", "Microsoft Server Speech Text to Speech Voice (id-ID, Andika)"),
-        "Italy" : ("it-IT", "Microsoft Server Speech Text to Speech Voice (it-IT, Cosimo, Apollo)"),
-        "Japan" : ("ja-JP", "Microsoft Server Speech Text to Speech Voice (ja-JP, HarukaRUS)"),
+        "Italian" : ("it-IT", "Microsoft Server Speech Text to Speech Voice (it-IT, Cosimo, Apollo)"),
+        "Japanese" : ("ja-JP", "Microsoft Server Speech Text to Speech Voice (ja-JP, HarukaRUS)"),
         "Korean" : ("ko-KR", "Microsoft Server Speech Text to Speech Voice (ko-KR, HeamiRUS)"),
         "Malay" : ("ms-MY", "Microsoft Server Speech Text to Speech Voice (ms-MY, Rizwan)"),
         "Norwegian" : ("nb-NO", "Microsoft Server Speech Text to Speech Voice (nb-NO, HuldaRUS)"),
@@ -46,7 +46,7 @@ class TextToSpeechAPI {
         "Turkish" : ("tr-TR", "Microsoft Server Speech Text to Speech Voice (tr-TR, SedaRUS)"),
         "Vietnamese" : ("vi-VN", "Microsoft Server Speech Text to Speech Voice (vi-VN, An)")]
     
-    private func getAuthToken(completionHandler: @escaping (String?, Error?) -> Void) {
+    public func getAuthToken(completionHandler: @escaping (String?, Error?) -> Void) {
         let urlString = "https://api.cognitive.microsoft.com/sts/v1.0/issueToken"
         guard let url = URL(string: urlString) else {
             completionHandler(nil, AppError.badURL(url: urlString))
